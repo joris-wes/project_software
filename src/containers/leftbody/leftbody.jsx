@@ -6,7 +6,13 @@ const leftbody = () => {
   return (
     <div className='leftmostbody'>
         <div className='dropdown'>
-            <Dropdown placeHolder="Select a city"/> 
+            <Dropdown
+                placeHolder="Select a city"
+                options={[{"value": "Enschede", "label": "Enschede"}, {"value": "Q", "label": "Q"}]}
+                isSearchable={false}
+                isMulti={false}
+                onChange={(value) => console.log(value)}
+            /> 
         </div>
 
         {/* <div className='leftmostbody-check-box'>
