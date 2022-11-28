@@ -1,0 +1,48 @@
+.graphbody {
+    display: block;
+    position: relative;
+    height: 100%;
+}
+.h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin: 0;
+    padding: 0;
+}
+.graphbody__container {
+    background: red;
+    display: block;
+    position: fixed;
+    margin: 10%;
+    width: 10px;
+}
+#graph2 {
+    background: red;
+    display: block;
+    position: fixed;
+    margin-left: 50%;
+    margin-top: 10%;
+    
+    
+}
+.compareButt {
+    display: block;
+    position: fixed;
+    margin-left: 35%;
+    margin-top: 20%;
+}
+#graph3 {
+    background: red;
+    display: block;
+    position: fixed;
+    margin-left: 10%;
+    margin-top: 30%;  
+}
+#graph4 {
+    background: red;
+    display: block;
+    position: fixed;
+    margin-left: 50%;
+    margin-top: 30%;  
+}

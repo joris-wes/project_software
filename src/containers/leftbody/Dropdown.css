@@ -1,0 +1,24 @@
+.dropdown-container {
+    text-align: left;
+    border: 1px solid #ccc;
+    position: relative;
+    border-radius: 5px;
+  }
+  
+  .dropdown-input {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
+  .dtopdown-menu {
+    position: absolute;
+    transform: translateY(4px);
+    width: 10%;
+    border: 1px solid black;
+    border-radius: 5px;
+    overflow: auto;
+    max-height: 150px;
+    background-color: white;
+  }
