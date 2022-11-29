@@ -1,5 +1,5 @@
 import React from 'react'
-import {RiMenu3Line, RiCloseLine} from 'react-icons/ri';
+
 import logo from '../../assets/weather.png';
 import './header.css'
 
