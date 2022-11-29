@@ -6,9 +6,8 @@ const body = () => {
   return (
    
     <div className='graphbody'>
-        <h1> test</h1>
         <div className='graphbody__container'>
-        <h1> graph Enschede</h1>
+        <h1> graph </h1>
         </div>
     </div>
        

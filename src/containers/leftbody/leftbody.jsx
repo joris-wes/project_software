@@ -8,7 +8,18 @@ const leftbody = () => {
         <div className='dropdown'>
             <Dropdown
                 placeHolder="Select a city"
-                options={[{"value": "Enschede", "label": "Enschede"}, {"value": "Q", "label": "Q"}]}
+                options={[{"value": "Enschede", "label": "Enschede"}, {"value": "Gronau", "label": "Gronau"}, {"value": "Wierden", "label": "Wierden"}]}
+                isSearchable={false}
+                isMulti={false}
+                onChange={(value) => console.log(value)}
+            /> 
+        </div>
+        <br>
+        </br>
+        <div className='dropdown'>
+            <Dropdown
+                placeHolder="Select an option what to show"
+                options={[{"value": "Temperature", "label": "Temperature"}, {"value": "Humidity", "label": "Humidity"}, {"value": "All together", "label": "All together"}]}
                 isSearchable={false}
                 isMulti={false}
                 onChange={(value) => console.log(value)}

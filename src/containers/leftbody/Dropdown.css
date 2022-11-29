@@ -8,6 +8,7 @@
 .dropdown-input {
     padding: 5px;
     display: flex;
+    border: 1px solid black;
     align-items: center;
     justify-content: space-between;
     user-select: none;
@@ -17,7 +18,7 @@
     position: absolute;
     transform: translateY(4px);
     width: 100%;
-    border: 1px solid red;
+    border: 1px solid black;
     border-radius: 5px;
     overflow: auto;
     max-height: 150px;
