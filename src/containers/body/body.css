@@ -1,7 +1,8 @@
 .graphbody {
-    display: block;
+    display: flex;
     position: relative;
     height: 100%;
+    justify-content: flex-start;
 }
 .h1 {
     font-size: 2.5rem;
@@ -12,37 +13,17 @@
 }
 .graphbody__container {
     background: red;
-    display: block;
-    position: fixed;
+    display: inline-block;
+    position: relative;
     margin: 10%;
     width: 10px;
-}
-#graph2 {
-    background: red;
-    display: block;
-    position: fixed;
-    margin-left: 50%;
-    margin-top: 10%;
     
     
 }
-.compareButt {
-    display: block;
-    position: fixed;
-    margin-left: 35%;
-    margin-top: 20%;
-}
-#graph3 {
-    background: red;
-    display: block;
-    position: fixed;
-    margin-left: 10%;
-    margin-top: 30%;  
-}
-#graph4 {
-    background: red;
-    display: block;
-    position: fixed;
-    margin-left: 50%;
-    margin-top: 30%;  
+
+.dropdownGraph {
+    display: inline-block;
+    position: relative;
+    background: white;
+    max-height: 39px;
 }

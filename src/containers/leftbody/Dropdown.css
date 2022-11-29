@@ -1,8 +1,13 @@
 .dropdown-container {
     text-align: left;
     border: 1px solid #ccc;
-    position: relative;
+    align-self: center;
     border-radius: 5px;
+    position: absolute;
+    display: block;
+    background-color: white;
+    width: 50%;
+
 }
   
 .dropdown-input {
@@ -17,10 +22,21 @@
 .dtopdown-menu {
     position: absolute;
     transform: translateY(4px);
-    width: 100%;
     border: 1px solid black;
     border-radius: 5px;
     overflow: auto;
     max-height: 150px;
     background-color: white;
+}
+.dropdown-item:hover {
+    background-color: #9fc3f870;
+  }
+.search-box{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin: 5px;
 }

@@ -10,9 +10,9 @@ const App = () => {
       <div className="gradient__bg">
         <Header />
       </div>
-      <div className='leftmostbar'>
+      {/* <div className='leftmostbar'>
         <Leftmostbar />
-      </div>
+      </div> */}
       <div className='main__body'>
         <Body />
         </div>

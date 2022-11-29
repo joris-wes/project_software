@@ -5,15 +5,6 @@ import Dropdown from "./dropdown";
 const leftbody = () => {
   return (
     <div className='leftmostbody'>
-        <div className='dropdown'>
-            <Dropdown
-                placeHolder="Select a city"
-                options={[{"value": "Enschede", "label": "Enschede"}, {"value": "Gronau", "label": "Gronau"}, {"value": "Wierden", "label": "Wierden"}]}
-                isSearchable={false}
-                isMulti={false}
-                onChange={(value) => console.log(value)}
-            /> 
-        </div>
         <br>
         </br>
         <div className='dropdown'>

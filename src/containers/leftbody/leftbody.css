@@ -1,6 +1,6 @@
 .leftmostbody {
-    display : block;
-    height: 55rem; 
+    display : block; 
+    height: 50rem;
     width: 160px; 
     position: relative; 
     z-index: 1; 
@@ -18,70 +18,3 @@ h2 {
     margin-bottom: 2rem; 
     font-family: Arial, Helvetica, sans-serif;
 }
-
-.check-box {
-    display: block;
-    position: relative;
-  padding-left: 1rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.check-box input {
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-
-}
-
-#city {
-    display: inline-block;
-    position: absolute;
-    margin-left: 1rem;
-    color: var(--color-text);
-    font-size: 1.2rem;
-    font-family: Arial, Helvetica, sans-serif;
-}
-.checkmark {
-    position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-}
-.check-box:hover input ~ .checkmark {
-    background-color: #ccc;
-  }
-.check-box input:checked ~ .checkmark {
-    background-color: #2196F3;
-  }
-  .checkmark:after {
-    content: "";
-    position: absolute;
-    display: none;
-  }
-  .check-box input:checked ~ .checkmark:after {
-    display: block;
-  }
-  .check-box .checkmark:after {
-    left: 9px;
-    top: 5px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 3px 3px 0;
-    -webkit-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    transform: rotate(45deg);
-  }
-  .dropdown {
-    background-color: white;
-  }

@@ -40,6 +40,7 @@ a {
 .leftmostbar {
    display: block;
     position: fixed;
+    height: 100%;
    
 }
 .main__body{
