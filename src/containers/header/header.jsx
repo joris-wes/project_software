@@ -7,10 +7,8 @@ import './header.css'
 const header = () => {
   return (
     <div className='headerbar'>
-        <div className='headerbar-logo'>
-            <img src={logo} alt="weather"/>
-            <h1>Weather Application</h1>
-        </div>
+        <img src={logo} alt="weather"/>
+        <h1>Weather Application</h1>
         <div className='dropdown'>
             <Dropdown
                 placeHolder="Select a city"
