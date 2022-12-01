@@ -12,7 +12,6 @@
     padding: 0;
 }
 .graphbody__container {
-    background: red;
     display: flex;
     position: relative;
     margin: 10%;

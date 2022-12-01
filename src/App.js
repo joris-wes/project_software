@@ -12,11 +12,10 @@ const App = () => {
       </div>
       <div className='main__body'>
         <Body />
+          <div className='footer'> 
+            <Footer />
+          </div>
         </div>
-    
-      <div className='footer'> 
-        <Footer />
-      </div>
     </div>
   );
 }
