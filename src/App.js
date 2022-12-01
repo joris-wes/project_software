@@ -2,7 +2,7 @@ import React from 'react';
 
 import './App.css';
 
-import {Header, Leftmostbar, Body} from './containers';
+import {Header, Body, Footer} from './containers';
 
 const App = () => {
   return (
@@ -10,14 +10,14 @@ const App = () => {
       <div className="gradient__bg">
         <Header />
       </div>
-      {/* <div className='leftmostbar'>
-        <Leftmostbar />
-      </div> */}
       <div className='main__body'>
         <Body />
         </div>
+    
+      <div className='footer'> 
+        <Footer />
+      </div>
     </div>
-
   );
 }
 

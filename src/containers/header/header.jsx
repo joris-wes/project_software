@@ -13,7 +13,7 @@ const header = () => {
             <Dropdown
                 placeHolder="Select a city"
                 options={[{"value": "Enschede", "label": "Enschede"}, {"value": "Gronau", "label": "Gronau"}, {"value": "Wierden", "label": "Wierden"}]}
-                isSearchable={true}
+                isSearchable={false}
                 isMulti={false}
                 onChange={(value) => console.log(value)}
             /> 
