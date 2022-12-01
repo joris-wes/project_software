@@ -19,7 +19,6 @@ const body = () => {
                 onChange={(value) => console.log(value)}
             /> 
         </div> */}
-      
     </div>
        
   )
