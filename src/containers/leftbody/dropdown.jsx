@@ -122,36 +122,36 @@ const Dropdown = ({
           option.label.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0
       );
     };
-  
+
     return (
       <div className="dropdown-container">
-        <div ref={inputRef} onClick={handleInputClick} className="dropdown-input">
-          <div className="dropdown-selected-value">{getDisplay()}</div>
-          <div className="dropdown-tools">
-            <div className="dropdown-tool">
-              <Icon />
-            </div>
+      <div ref={inputRef} onClick={handleInputClick} className="dropdown-input">
+        <div className="dropdown-selected-value">{getDisplay()}</div>
+        <div className="dropdown-tools">
+          <div className="dropdown-tool">
+            <Icon />
           </div>
         </div>
-        {showMenu && (
-          <div className="dropdown-menu">
-            {isSearchable && (
-              <div className="search-box">
-                <input onChange={onSearch} value={searchValue} ref={searchRef} />
-              </div>
-            )}
-            {getOptions().map((option) => (
-              <div
-                onClick={() => onItemClick(option)}
-                key={option.value}
-                className={`dropdown-item ${isSelected(option) && "selected"}`}
-              >
-                {option.label}
-              </div>
-            ))}
-          </div>
-        )}
       </div>
+      {showMenu && (
+        <div className="dropdown-menu">
+          {isSearchable && (
+            <div className="search-box">
+              <input onChange={onSearch} value={searchValue} ref={searchRef} />
+            </div>
+          )}
+          {getOptions().map((option) => (
+            <div
+              onClick={() => onItemClick(option)}
+              key={option.value}
+              className={`dropdown-item ${isSelected(option) && "selected"}`}
+            >
+              {option.label}
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
     );
 };
 

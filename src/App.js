@@ -12,10 +12,8 @@ const App = () => {
       </div>
       <div className='main__body'>
         <Body />
-          <div className='footer'> 
-            <Footer />
+        <Footer />
           </div>
-        </div>
     </div>
   );
 }
