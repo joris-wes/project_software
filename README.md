@@ -1,7 +1,8 @@
 To run the localhost site
 Linux and macOS (Windows Git Bash)-
 ```console
-export NODE_OPTIONS=--openssl-legacy-provider```
+export NODE_OPTIONS=--openssl-legacy-provider
+```
 
 Windows command prompt-
 ```console
