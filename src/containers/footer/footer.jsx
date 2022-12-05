@@ -27,10 +27,6 @@ const footer = () => {
                 <input type="radio" id="ws" name="duration" />
                 <label for="ws">Weeks</label>
             </li>
-            <li>
-                <input type="radio" id="a100" name="duration" />
-                <label for="eeeee">Eternity</label>
-            </li>
             </ul>
 </div>
     )
