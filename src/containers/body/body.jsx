@@ -8,7 +8,7 @@ const body = () => {
     <div className='graphbody'>
        
         <div className='graphbody__container'>
-        <h1> graph </h1>
+        <h1 font-color='blue'> graph </h1>
         </div>
     </div>
        

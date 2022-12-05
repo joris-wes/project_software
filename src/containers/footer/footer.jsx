@@ -1,5 +1,5 @@
 import React from "react";
-import { Dropup } from "..";
+
 import './footer.css';
 const footer = () => {
     return (
