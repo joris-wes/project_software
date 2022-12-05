@@ -10,6 +10,10 @@ const data = [
     Wierden: 10,
   },
   {
+    time: '13:20',
+    Enschede: 14,
+  },
+  {
     time: '14:00',
     Enschede: 15,
     Gronau: 14,

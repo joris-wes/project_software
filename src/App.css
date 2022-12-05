@@ -6,9 +6,7 @@
     font-family: Arial, Helvetica, sans-serif;
     
 }
-body {
-    /* background:var(--color-bg); */
-}
+
 a {
     color: unset;
     text-decoration: none;
@@ -43,4 +41,5 @@ a {
     display: block;
     position: fixed;
     padding: 5%;
+    height: 90%;
 }
