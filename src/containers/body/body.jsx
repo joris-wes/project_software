@@ -12,6 +12,8 @@ const data = [
   {
     time: '13:20',
     Enschede: 14,
+    Gronau: null,
+    Wierden: null,
   },
   {
     time: '14:00',
@@ -59,8 +61,8 @@ const body = () => {
         <div className='graphbody__container'>
          
          <LineChart
-      width={500}
-      height={300}
+      width={950}
+      height={400}
       data={data}
       margin={{
         top: 5,
@@ -74,9 +76,9 @@ const body = () => {
       <YAxis />
       <Tooltip />
       <Legend />
-      <Line type="monotone" dataKey="Enschede" stroke="#82ca9d" />
-      <Line type="monotone" dataKey="Gronau" stroke="#ff0000" />
-      <Line type="monotone" dataKey="Wierden" stroke="#0000FF" />
+      <Line  connectNulls stype="monotone" dataKey="Enschede" stroke="#82ca9d" />
+      <Line connectNulls type="monotone" dataKey="Gronau" stroke="#ff0000" />
+      <Line connectNulls type="monotone" dataKey="Wierden" stroke="#0000FF" />
     </LineChart>
         </div>
     </div>
