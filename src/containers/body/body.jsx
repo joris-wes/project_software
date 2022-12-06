@@ -1,6 +1,6 @@
 import React from 'react';
 import './body.css';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Brush } from 'recharts';
 
 const data = [
   {
@@ -59,9 +59,9 @@ const body = () => {
        <h1 id="one">You have selected the temperature graph for:</h1>
        <h1 id="one">All of three cities</h1>
         <div className='graphbody__container'>
-         
+          <div style={{ width: '100%', height: 400 }}>
          <LineChart
-      width={950}
+      width={1000}
       height={400}
       data={data}
       margin={{
@@ -79,7 +79,9 @@ const body = () => {
       <Line  connectNulls stype="monotone" dataKey="Enschede" stroke="#82ca9d" />
       <Line connectNulls type="monotone" dataKey="Gronau" stroke="#ff0000" />
       <Line connectNulls type="monotone" dataKey="Wierden" stroke="#0000FF" />
+      <Brush/>
     </LineChart>
+        </div>
         </div>
     </div>
   )
