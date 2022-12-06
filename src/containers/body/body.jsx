@@ -59,29 +59,29 @@ const body = () => {
        <h1 id="one">You have selected the temperature graph for:</h1>
        <h1 id="one">All of three cities</h1>
         <div className='graphbody__container'>
-          <div style={{ width: '100%', height: 400 }}>
-         <LineChart
-      width={1000}
-      height={400}
-      data={data}
-      margin={{
-        top: 5,
-        right: 30,
-        left: 20,
-        bottom: 5
-      }}
-    >
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis dataKey="time" />
-      <YAxis />
-      <Tooltip />
-      <Legend />
-      <Line  connectNulls stype="monotone" dataKey="Enschede" stroke="#82ca9d" />
-      <Line connectNulls type="monotone" dataKey="Gronau" stroke="#ff0000" />
-      <Line connectNulls type="monotone" dataKey="Wierden" stroke="#0000FF" />
-      <Brush/>
-    </LineChart>
-        </div>
+        
+            <LineChart
+                width={1000}
+                height={400}
+                data={data}
+                margin={{
+                    top: 5,
+                    right: 30,
+                    left: 20,
+                    bottom: 5
+                }}
+            >
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis dataKey="time" />
+                <YAxis />
+                <Tooltip />
+                <Legend />
+                <Line  connectNulls stype="monotone" dataKey="Enschede" stroke="#82ca9d" />
+                <Line connectNulls type="monotone" dataKey="Gronau" stroke="#ff0000" />
+                <Line connectNulls type="monotone" dataKey="Wierden" stroke="#0000FF" />
+                <Brush height={22} />
+            </LineChart>
+        
         </div>
     </div>
   )

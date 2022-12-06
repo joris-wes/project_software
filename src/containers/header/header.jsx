@@ -10,6 +10,7 @@ const header = () => {
         <img src={logo} alt="weather"/>
         <h1>Weather Application</h1>
         <div className='dropdown'>
+          
             <Dropdown
                 placeHolder="Select a city"
                 options={[{"value": "Enschede", "label": "Enschede"}, {"value": "Gronau", "label": "Gronau"}, {"value": "Wierden", "label": "Wierden"}]}
