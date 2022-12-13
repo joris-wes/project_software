@@ -1,4 +1,5 @@
 import React, { useEffect, useState, useRef, CloseIcon } from "react";
+import  GlobalState  from "../../App.js";
 
 import "./Dropdown.css";
 
@@ -10,18 +11,20 @@ const Icon = () => {
   );
 };
 
+
+
 const Dropdown = ({
     placeHolder,
     options,
     isMulti,
     isSearchable,
-    onChange
   }) => {
     const [showMenu, setShowMenu] = useState(false);
     const [selectedValue, setSelectedValue] = useState(isMulti ? [] : null);
     const [searchValue, setSearchValue] = useState("");
     const searchRef = useRef();
     const inputRef = useRef();
+    // const places = React.useContext(GlobalState).array;
   
     useEffect(() => {
       setSearchValue("");
@@ -78,7 +81,6 @@ const Dropdown = ({
       e.stopPropagation();
       const newValue = removeOption(option);
       setSelectedValue(newValue);
-      onChange(newValue);
     };
   
     const onItemClick = (option) => {
@@ -93,7 +95,7 @@ const Dropdown = ({
         newValue = option;
       }
       setSelectedValue(newValue);
-      onChange(newValue);
+      
     };
   
     const isSelected = (option) => {

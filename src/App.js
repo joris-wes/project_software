@@ -3,7 +3,9 @@ import React from 'react';
 import './App.css';
 
 import {Header, Body, Footer} from './containers';
-
+const GlobalState = {
+  array: []
+};
 const App = () => {
   return (
     <div className="App">
@@ -19,3 +21,4 @@ const App = () => {
 }
 
 export default App;
+export {GlobalState};

@@ -4,6 +4,10 @@ import Dropdown from '../leftbody/dropdown';
 import logo from '../../assets/weather.png';
 import './header.css'
 
+
+
+
+
 const header = () => {
   return (
     <div className='headerbar'>
@@ -16,7 +20,7 @@ const header = () => {
                 options={[{"value": "Enschede", "label": "Enschede"}, {"value": "Gronau", "label": "Gronau"}, {"value": "Wierden", "label": "Wierden"}]}
                 isSearchable={false}
                 isMulti={false}
-                onChange={(value) => console.log(value)}
+                
             /> 
         </div>
     </div>
