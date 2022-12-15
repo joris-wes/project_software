@@ -18,6 +18,7 @@ const Dropdown = ({
     options,
     isMulti,
     isSearchable,
+    onClick,
   }) => {
     const [showMenu, setShowMenu] = useState(false);
     const [selectedValue, setSelectedValue] = useState(isMulti ? [] : null);
@@ -95,7 +96,7 @@ const Dropdown = ({
         newValue = option;
       }
       setSelectedValue(newValue);
-      
+      onClick(newValue);
     };
   
     const isSelected = (option) => {
