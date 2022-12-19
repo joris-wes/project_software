@@ -100,7 +100,7 @@ const chart = () => {
                 <Line connectNulls stype="monotone" dataKey="Enschede"  stroke="#82ca9d"  />
                 <Line connectNulls type="monotone" dataKey="Gronau"  stroke="#ff0000" />
                 <Line connectNulls type="monotone" dataKey="Wierden"  stroke="#0000FF" />
-                <Brush height={22}  />
+                <Brush height={17}  />
             </LineChart>
         </div>
     );
