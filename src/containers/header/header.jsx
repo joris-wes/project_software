@@ -3,16 +3,26 @@ import Dropdown from '../leftbody/dropdown';
 
 import logo from '../../assets/weather.png';
 import './header.css'
+import {setText} from '../leftbody/dropdown';
+import {useState} from 'react';
 
 
-const StateArray =[];
+export function ChartHook(initvalue){
+  const [chartData, setChartData] = useState(initvalue);
+  return [chartData, setChartData];
+}
 
-const handleClick= (value) => {
-    console.log(StateArray)
-    StateArray.push(value);
+
+const header = () => {
+ // const StateArray =[];
+
+const handleDDClick= (value) => {
+    
+    ChartHook.chartData = value;
+    console.log(ChartHook.chartData)
     const recipeUrl = "http://localhost:3000/api/recipes"
     const PostBody = {
-      sensor: value,
+      sensor: value, 
     }
     const RequestMetadata ={
       method: 'POST',
@@ -22,10 +32,8 @@ const handleClick= (value) => {
       body: JSON.stringify(PostBody)
     }
     fetch(recipeUrl, PostBody, RequestMetadata)
+    
 }
-
-
-const header = () => {
   return (
     <div className='headerbar'>
         <img src={logo} alt="weather"/>
@@ -37,8 +45,12 @@ const header = () => {
                 options={[{"value": "sensor1", "label": "sensor1"}, {"value": "sensor2", "label": "sensor2"}, {"value": "sensor3", "label": "sensor3"}]}
                 isSearchable={false}
                 isMulti={false}
-                onClick = {handleClick}
-   
+                onClick = {handleDDClick}
+              // value={StateArray.push(chartData)}
+                
+              
+
+                
                 
             /> 
         </div>
@@ -48,3 +60,4 @@ const header = () => {
 }
 
 export default header
+

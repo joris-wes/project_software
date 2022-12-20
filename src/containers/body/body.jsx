@@ -78,11 +78,30 @@ const data = [
   },
 ]
 
+class reText extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      text: ""
+    }
+  }
+  changeText = (StateArray) => {
+    this.setState({ text: StateArray.target.value });
+    console.log(this.state.text)
+  }
+  render() {
+    return (
+      <h1 id="one"><reText text></reText></h1>
+    )
+}
+}
+
 const body = () => {
   return (
     <div className='body'>
        <h1 id="one">You have selected the temperature graph for:</h1>
-       <h1 id="one">All of three cities</h1>
+       <reText />
+       <reText />
         <div className='graphbody__container'>
 
             <Chart />
