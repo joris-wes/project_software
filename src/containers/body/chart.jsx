@@ -12,6 +12,7 @@ const data_s1 = [
   {
     time: '12:00',
     temperature: 13,
+    humidity: 50,
 
   },
   {
@@ -57,19 +58,25 @@ const data_s1 = [
 
 
 const chart = () => {
-  const HandleChart = () => {
-    if (ChartHook.chartData === "sensor1") {
-      console.log("sensor1")
-    }
+  // const HandleChart = () => {
+  //   ChartHook.forEach(element => {
+  //     if (element === "sensor1") {
+  //       console.log("sensor1")
+
+  //     }
+  //   });
+  //   if (ChartHook.chartData === "sensor1") {
+  //     console.log("sensor1")
+  //   }
  
 
     
   return (
-    <div className="chart" HandleChart>
+    <div className="chart">
 
 
 
-      <LineChart HandleChart
+      <LineChart 
         width={500}
         height={400}
         data={data_s1}
@@ -86,12 +93,12 @@ const chart = () => {
         <Tooltip />
         <Legend />
         
-        {/* <Line connectNulls stype="monotone" dataKey="temperature" stroke="#82ca9d" /> */}
+        <Line connectNulls stype="monotone" dataKey="temperature" stroke="#82ca9d" />
         <Brush height={17} />
       </LineChart>
     </div>
   );
 }
-}
+
 
 export default chart;   

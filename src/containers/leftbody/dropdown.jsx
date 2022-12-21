@@ -97,6 +97,7 @@ const Dropdown = ({
       }
       setSelectedValue(newValue);
       onClick(newValue);
+      
     };
   
     const isSelected = (option) => {
