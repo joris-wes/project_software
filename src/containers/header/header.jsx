@@ -18,7 +18,7 @@ const header = () => {
 
 const handleDDClick= (value) => {
     
-    ChartHook.chartData = value;
+    ChartHook.setChartData = value;
     console.log(ChartHook.chartData)
     const recipeUrl = "http://localhost:3000/api/recipes"
     const PostBody = {
