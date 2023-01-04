@@ -11,64 +11,60 @@ import Header from "../header/header";
 const data_s1 = [
   {
     time: '12:00',
-    temperature: 13,
+    temperature_sensor1: 13,
     humidity: 50,
 
   },
   {
     time: '13:20',
-    temperature: 14,
+    temperature_sensor1: 14,
 
 
   },
   {
     time: '14:00',
-    temperature: 15,
+    temperature_sensor1: 15,
 
   },
   {
     time: '16:00',
-    temperature: 13,
+    temperature_sensor1: 13,
 
   },
   {
     time: '18:00',
-    temperature: 10,
+    temperature_sensor1: 10,
 
 
   },
   {
     time: '20:00',
-    temperature: 8,
+    temperature_sensor1: 8,
 
 
   },
   {
     time: '22:00',
-    temperature: 5,
+    temperature_sensor1: 5,
 
   },
   {
     time: '00:00',
-    temperature: 0,
+    temperature_sensor1: 0,
 
   },
 ]
 
 
 
-const chart = () => {
-  // const HandleChart = () => {
-  //   ChartHook.forEach(element => {
-  //     if (element === "sensor1") {
-  //       console.log("sensor1")
+const chart = ({dropDownValue}) => {
+   const [chartData, setChartData] = useState('');
 
-  //     }
-  //   });
-  //   if (ChartHook.chartData === "sensor1") {
-  //     console.log("sensor1")
-  //   }
- 
+   useEffect(()=>{
+    if(dropDownValue){
+      setChartData(data_s1)
+    }
+   }, [dropDownValue])
 
     
   return (
@@ -77,9 +73,10 @@ const chart = () => {
 
 
       <LineChart 
+        
         width={500}
         height={400}
-        data={data_s1}
+        data={chartData}
         margin={{
           top: 5,
           right: 30,
@@ -93,7 +90,7 @@ const chart = () => {
         <Tooltip />
         <Legend />
         
-        <Line connectNulls stype="monotone" dataKey="temperature" stroke="#82ca9d" />
+        <Line connectNulls stype="monotone" dataKey="temperature_sensor1" stroke="#82ca9d" />
         <Brush height={17} />
       </LineChart>
     </div>

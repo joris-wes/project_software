@@ -2,14 +2,17 @@ import React from 'react';
 import './body.css';
 import {LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Brush } from 'recharts';
 import Chart from './chart';
+import { useEffect } from 'react';
+import { render } from 'react-dom';
+import { useState } from 'react';
 
 const data = [
   {
     time: '12:00',
     Enschede: 13,
-    Gronau: 13,
+    temperature_sensor2: 13,
     Wierden: 10,
-    pEnschede: 750,
+    pressure_sensor1: 750,
     pGronau: 750,
     pWierden: 750,
   },
@@ -23,27 +26,27 @@ const data = [
   {
     time: '14:00',
     Enschede: 15,
-    Gronau: 14,
+    temperature_sensor2: 14,
     Wierden: 13,
-    pEnschede: 770,
+    pressure_sensor1: 770,
     pGronau: 750,
     pWierden: 740,
   },
   {
     time: '16:00',
     Enschede: 13,
-    Gronau: 14,
+    temperature_sensor2: 14,
     Wierden: 12,
-    pEnschede: 780,
+    pressure_sensor1: 780,
     pGronau: 760,
     pWierden: 750,
   },
   {
     time: '18:00',
     Enschede: 10,
-    Gronau: 10,
+    temperature_sensor2: 10,
     Wierden: 9,
-    pEnschede: 790,
+    pressure_sensor1: 790,
     pGronau: 770,
     pWierden: 760,
 
@@ -51,9 +54,9 @@ const data = [
   {
     time: '20:00',
     Enschede: 8,
-    Gronau: 7,
+    temperature_sensor2: 7,
     Wierden: 7,
-    pEnschede: 800,
+    pressure_sensor1: 800,
     pGronau: 780,
     pWierden: 770,
 
@@ -61,51 +64,67 @@ const data = [
   {
     time: '22:00',
     Enschede: 5,
-    Gronau: 5,
+    temperature_sensor2: 5,
     Wierden: 0,
-    pEnschede: 750,
+    pressure_sensor1: 750,
     pGronau: 750,
     pWierden: 750,
   },
   {
     time: '00:00',
     Enschede: 0,
-    Gronau: 0,
+    temperature_sensor2: 0,
     Wierden: -1,
-    pEnschede: 750,
+    pressure_sensor1: 750,
     pGronau: 750,
     pWierden: 750,
   },
 ]
 
-class reText extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      text: ""
-    }
-  }
-  changeText = (StateArray) => {
-    this.setState({ text: StateArray.target.value });
-    console.log(this.state.text)
-  }
-  render() {
-    return (
-      <h1 id="one"><reText text></reText></h1>
-    )
-}
-}
 
-const body = () => {
+
+const body = ({chartData}) => {
+
+
+  useEffect(()=>{
+    if (chartData == "sensor1"){
+      console.log("s1")
+    }
+    if (chartData == "sensor2"){
+
+    }
+    if (chartData == "sensor3"){
+
+    }
+
+  }, [chartData])
+
   return (
     <div className='body'>
        <h1 id="one">You have selected the temperature graph for:</h1>
-       <reText />
-       <reText />
+       <h1 id="one">Sensor 1, Sensor 2</h1>
         <div className='graphbody__container'>
-
-            <Chart />
-            <Chart />           
+            <Chart chartData/>
+            <LineChart   
+            width={500}
+            height={400}
+            data={data}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 20,
+              bottom: 5
+            }}
+          >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="time" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            
+            <Line connectNulls stype="monotone" dataKey="temperature_sensor2" stroke="#FF0000" />
+            <Brush height={17} />
+          </LineChart>        
         </div>
     </div>
   )

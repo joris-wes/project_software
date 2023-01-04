@@ -39,7 +39,7 @@ const handleClick = (value) => {
     fetch(recipeUrl, PostBody, RequestMetadata)
 }
 
-const footer = () => {
+const footer = ({chartData}) => {
     return (
         <div className='footer'>
             <div class="dropup">

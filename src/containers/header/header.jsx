@@ -7,19 +7,16 @@ import {setText} from '../leftbody/dropdown';
 import {useState} from 'react';
 
 
-export function ChartHook(initvalue){
-  const [chartData, setChartData] = useState(initvalue);
-  return [chartData, setChartData];
-}
 
 
-const header = () => {
+const header = ({setChartData}) => {
+
  // const StateArray =[];
 
-const handleDDClick= (value) => {
+const handleDDClick= ({value}) => {
+    console.log(value);
+    setChartData(value);
     
-    ChartHook.setChartData = value;
-    console.log(ChartHook.chartData)
     const recipeUrl = "http://localhost:3000/api/recipes"
     const PostBody = {
       sensor: value, 
@@ -41,7 +38,7 @@ const handleDDClick= (value) => {
         <div className='dropdown'>
           
             <Dropdown
-                placeHolder="Select a city"
+                placeHolder="Select a sensor"
                 options={[{"value": "sensor1", "label": "sensor1"}, {"value": "sensor2", "label": "sensor2"}, {"value": "sensor3", "label": "sensor3"}]}
                 isSearchable={false}
                 isMulti={false}
