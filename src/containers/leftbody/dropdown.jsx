@@ -1,16 +1,41 @@
 import React, { useEffect, useState, useRef, CloseIcon } from "react";
 import Multiselect from 'multiselect-react-dropdown';
-
+import axios from 'axios';
 
 const Dropdown = ({
-  options,
-  setDropDownData
+  setDropDownData,
+
   }) => {
 
+const [fetchedData, setfetchedData] = useState([]);
+
+    const getData = () => {
+      axios.get("https://6bfb-92-67-23-13.eu.ngrok.io/list") // test server
+      .then((response)=>{
+        console.log(response)
+        const myData = response.data;
+        const newArr = []
+        for (let i=0; i<myData.length;i++){
+          let id = i;
+          let value = myData[i]; 
+          newArr.push({value, id})
+        }
+        setfetchedData(newArr);
+        console.log(newArr);
+      });
+    }
+
+  useEffect(()=>getData(), []);
+    
+    
+
+  //  const data = await fetch("https://6bfb-92-67-23-13.eu.ngrok.io/list");
+  //  data.json();
+  //  console.log(data)
 
     return ( 
       <Multiselect
-        options={options} // Options to display in the dropdown
+        options={fetchedData} // Options to display in the dropdown
         // selectedValues={stateTEST.selectedValues} // Preselected value to persist in dropdown
         onSelect={
           (e)=> setDropDownData(JSON.stringify(e))

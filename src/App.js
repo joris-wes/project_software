@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import {useState} from 'react';
+import axios from 'axios';
 
 import './App.css';
 
@@ -16,6 +17,7 @@ const App = () => {
     console.log("Selected sensors: "+ JSON.stringify(dropDownData));
   }, [yscope, xscope, dropDownData])
   
+
 
   return (
     <div className="App">
