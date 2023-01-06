@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import './footer.css';
 
 
@@ -23,7 +24,7 @@ const changeTime = (value) => {
 
 
 const handleClick = (value) => {
-    console.log(StateArray)
+   // console.log(StateArray)
     StateArray.push(value);
     const recipeUrl = "http://localhost:3000/api/recipes"
     const PostBody = {
@@ -39,30 +40,32 @@ const handleClick = (value) => {
     fetch(recipeUrl, PostBody, RequestMetadata)
 }
 
-const footer = ({chartData}) => {
+const footer = ({setxScope, setyScope}) => {
+    
+    
     return (
         <div className='footer'>
             <div class="dropup">
                 <button class="dropbtn">Select an option</button>
                 <div class="dropup-content">
-                    <a href="#" onClick={event => handleClick(event)}>Temperature</a>
-                    <a href="#" onClick={event => handleClick(event)}>Humidity</a>
-                    <a href="#" onClick={event => handleClick(event)}>Pressure</a>
-                    <a href="#" onClick={event => handleClick(event)}>Light</a>
+                    <a href="#" onClick={(e) => {setyScope("Temperature")}}>Temperature</a>
+                    <a href="#" onClick={(e) => {setyScope("Humidity")}}>Humidity</a>
+                    <a href="#" onClick={(e) => {setyScope("Pressure")}}>Pressure</a>
+                    <a href="#" onClick={(e) => {setyScope("Light")}}>Light</a>
                 </div>
             </div>
             
             <ul class="donate-now">
-            <li>
-                <input type="radio" id="ws" name="duration" onClick={event => changeTime("Hours")}/>
+            <li onClick = {handleClick}>
+                <input type="radio" id="ws" name="duration" onClick={(e) => {setxScope("Hours")} }/>
                 <label for="hs">Hours</label>
             </li>
-            <li>
-                <input type="radio" id="ds" name="duration"  onClick={event => changeTime("Days")}/>
+            <li onClick ={handleClick}>
+                <input type="radio" id="ds" name="duration"  onClick={(e) => {setxScope("Days")} }/>
                 <label for="ds">Days</label>
             </li>
             <li onClick={handleClick}>
-                <input type="radio" id="ws" name="duration" onClick={event => changeTime("Weeks")}/>
+                <input type="radio" id="ws" name="duration" onClick={(e) => {setxScope("Weeks")} }/>
                 <label for="ws">Weeks</label>
             </li>
             </ul>

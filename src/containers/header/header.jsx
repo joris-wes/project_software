@@ -9,40 +9,23 @@ import {useState} from 'react';
 
 
 
-const header = ({setChartData}) => {
+const header = ({setDropDownData}) => {
 
- // const StateArray =[];
 
-const handleDDClick= ({value}) => {
-    console.log(value);
-    setChartData(value);
-    
-    const recipeUrl = "http://localhost:3000/api/recipes"
-    const PostBody = {
-      sensor: value, 
-    }
-    const RequestMetadata ={
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(PostBody)
-    }
-    fetch(recipeUrl, PostBody, RequestMetadata)
-    
-}
   return (
     <div className='headerbar'>
         <img src={logo} alt="weather"/>
         <h1>Weather Application</h1>
         <div className='dropdown'>
           
-            <Dropdown
-                placeHolder="Select a sensor"
-                options={[{"value": "sensor1", "label": "sensor1"}, {"value": "sensor2", "label": "sensor2"}, {"value": "sensor3", "label": "sensor3"}]}
-                isSearchable={false}
-                isMulti={false}
-                onClick = {handleDDClick}
+            <Dropdown 
+            setDropDownData={setDropDownData}
+                options={
+                  [
+                    {value: 'sensor1', id: 1},
+                    {value: 'sensor2', id: 2},
+                    {value:'sensor3',id:3}
+                  ]}
               // value={StateArray.push(chartData)}
                 
               

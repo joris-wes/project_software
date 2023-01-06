@@ -1,20 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {useState} from 'react';
 
 import './App.css';
 
 import {Header, Body, Footer} from './containers';
 const App = () => {
-  const [chartData, setChartData] = useState('');  
+
+  const [dropDownData, setDropDownData] = useState([]);  
+  const [xscope,setxScope] = useState('');
+  const [yscope, setyScope] = useState('');
+
+  useEffect(()=>{
+    console.log("y: " + yscope);
+    console.log("x: " + xscope);
+    console.log("Selected sensors: "+ JSON.stringify(dropDownData));
+  }, [yscope, xscope, dropDownData])
+  
 
   return (
     <div className="App">
       <div className="gradient__bg">
-        <Header setChartData={setChartData} />
+        <Header setDropDownData={setDropDownData} />
       </div>
       <div className='main__body'>
-        <Body chartData={chartData} />
-        <Footer chartData={chartData} />
+        <Body />
+        <Footer setxScope ={setxScope} setyScope = {setyScope}  />
           </div>
     </div>
   );
