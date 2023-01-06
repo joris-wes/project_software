@@ -83,26 +83,24 @@ const data = [
 
 
 
-const body = ({chartData}) => {
-
-
+const body = ({dropDownData}) => {
+  
+  
   useEffect(()=>{
-    if (chartData == "sensor1"){
-      console.log("s1")
+    if(dropDownData.length != 0){
+    let dropDownList = JSON.parse(dropDownData);
+    const newArray =[]
+    for(let i=0;i<dropDownList.length;i++){
+       newArray.push(dropDownList[i]);
+       
     }
-    if (chartData == "sensor2"){
-
     }
-    if (chartData == "sensor3"){
-
-    }
-
-  }, [chartData])
-
+  })
+ 
   return (
     <div className='body'>
        <h1 id="one">You have selected the temperature graph for:</h1>
-       <h1 id="one">Sensor 1, Sensor 2</h1>
+       <h1 id="one">{dropDownData}</h1>
         <div className='graphbody__container'>
             <Chart chartData/>
             <LineChart   

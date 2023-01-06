@@ -7,7 +7,7 @@ import './App.css';
 import {Header, Body, Footer} from './containers';
 const App = () => {
 
-  const [dropDownData, setDropDownData] = useState([]);  
+  const [dropDownData, setDropDownData] = useState("");  
   const [xscope,setxScope] = useState('');
   const [yscope, setyScope] = useState('');
 
@@ -25,7 +25,7 @@ const App = () => {
         <Header setDropDownData={setDropDownData} />
       </div>
       <div className='main__body'>
-        <Body />
+        <Body dropDownData ={dropDownData}/>
         <Footer setxScope ={setxScope} setyScope = {setyScope}  />
           </div>
     </div>

@@ -27,11 +27,6 @@ const [fetchedData, setfetchedData] = useState([]);
 
   useEffect(()=>getData(), []);
     
-    
-
-  //  const data = await fetch("https://6bfb-92-67-23-13.eu.ngrok.io/list");
-  //  data.json();
-  //  console.log(data)
 
     return ( 
       <Multiselect
