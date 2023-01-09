@@ -5,26 +5,164 @@ import { useState } from 'react';
 import { useEffect } from "react";
 import { ChartHook } from '../header/header';
 import Header from "../header/header";
+import axios from 'axios';
 
 
 
-const data_s1 = [
- {"device_id":"py-saxion"},
- {"light":0,"pressure":1001.5,"temperature":21.2},
- {"light":0,"pressure":1001.5,"temperature":21.1}
+const data_s1 = 
+  [
+    {
+      "id": "02e21c74833e99d48191df8ffc0000e0",
+      "key": "02e21c74833e99d48191df8ffc0000e0",
+      "value": {
+        "rev": "1-555a48be5fd970c74d3e8715130c1967"
+      },
+      "doc": {
+        "_id": "02e21c74833e99d48191df8ffc0000e0",
+        "_rev": "1-555a48be5fd970c74d3e8715130c1967",
+        "recieved_at": "",
+        "end_device_ids": {
+          "device_id": "py-wierden"
+        },
+        "uplink_message": {
+          "decoded_payload": {
+            "light": 0,
+            "pressure": 1007.5,
+            "temperature": 23.7
+          },
+          "Settings": {
+            "Data_rate": {
+              "Bandwidth": 0,
+              "Spreading_factor": 0
+            },
+            "Frequency": "868500000",
+            "Timestamp": 348409555,
+            "Time": "2022-12-21T22:37:54.751185894Z"
+          },
+          "rx_metadata": [
+            {
+              "channel_rssi": -79,
+              "gateway_ids": {
+                "eui": "58A0CBFFFE8005DA",
+                "gateway_id": "slot-wierden"
+              },
+              "location": {
+                "altitude": 10,
+                "latitude": 52.36891310514845,
+                "longitude": 6.602898538112641,
+                "source": "SOURCE_REGISTRY"
+              },
+              "received_at": "2022-12-21T22:37:54.767894353Z",
+              "rssi": -79,
+              "snr": 7.5,
+              "time": "2022-12-21T22:37:54.751185894Z",
+              "timestamp": 348409555,
+              "uplink_token": "ChoKGAoMc2xvdC13aWVyZGVuEghYoMv//oAF2hDTnZGmARoMCMKVjp0GENKLhYADILjQz/aRgQM="
+            }
+          ],
+          "Received_at": "2022-12-21T22:37:54.806688139Z",
+          "Consumed_airtime": "0.051456s"
+        }
+      }
+    },
+    {
+      "id": "02e21c74833e99d48191df8ffc0003e0",
+      "key": "02e21c74833e99d48191df8ffc0100e0",
+      "value": {
+        "rev": "1-555a48be5fd970c74d3e8714130c1967"
+      },
+      "doc": {
+        "_id": "02e21c74833e99d48191df8fff0000e0",
+        "_rev": "1-555a48be5fd970c74d3e8715130c1967",
+        "recieved_at": "",
+        "end_device_ids": {
+          "device_id": "py-gronau"
+        },
+        "uplink_message": {
+          "decoded_payload": {
+            "light": 1,
+            "pressure": 1008.5,
+            "temperature": 20.7
+          },
+          "Settings": {
+            "Data_rate": {
+              "Bandwidth": 0,
+              "Spreading_factor": 0
+            },
+            "Frequency": "868500000",
+            "Timestamp": 348409555,
+            "Time": "2022-12-21T23:37:54.751185894Z"
+          },
+          "rx_metadata": [
+            {
+              "channel_rssi": -79,
+              "gateway_ids": {
+                "eui": "58A0CBFFFE8005DA",
+                "gateway_id": "slot-wierden"
+              },
+              "location": {
+                "altitude": 10,
+                "latitude": 52.36891310514845,
+                "longitude": 6.602898538112641,
+                "source": "SOURCE_REGISTRY"
+              },
+              "received_at": "2022-12-21T22:37:54.767894353Z",
+              "rssi": -79,
+              "snr": 7.5,
+              "time": "2022-12-21T22:37:54.751185894Z",
+              "timestamp": 348409555,
+              "uplink_token": "ChoKGAoMc2xvdC13aWVyZGVuEghYoMv//oAF2hDTnZGmARoMCMKVjp0GENKLhYADILjQz/aRgQM="
+            }
+          ],
+          "Received_at": "2022-12-21T22:37:54.806688139Z",
+          "Consumed_airtime": "0.051456s"
+        }
+      }
+    }
+  ]
+
+const data1 = [
+  {
+    temperature: 23.5,
+    humidity: 60,
+    pressure: 1000,
+    time: "2022-12-21T22:37:54.751185894Z"
+  },
+  {
+    temperature: 20.5,
+    humidity: 60,
+    pressure: 1000, 
+    time: "2022-12-21T23:37:54.751185894Z"
+  }
 ]
-
-
 
 const chart = ({dropDownValue}) => {
    const [chartData, setChartData] = useState('');
 
-   useEffect(()=>{
-    if(dropDownValue){
-      setChartData(data_s1)
-    }
-   }, [dropDownValue])
+   const getData = () => {
+    axios.get("https://sensor_data") // test server
+    .then((response)=>{
+      console.log(response)
+      const myData = response.data;
+      const newArr = []
+      for (let i=0; i<myData.length;i++){
+       let val = myData[i];
+       newArr.push({val});
+      }
+      setChartData(newArr);
+      console.log(newArr);
+    });
+  }
 
+   useEffect(()=>getData(), []);
+  
+   if(dropDownValue==="sensor1"){
+    getData("https://sensor1");
+   } else if (dropDownValue==="sensor2"){
+    getData("https://sensor2");
+   } else if (dropDownValue==="sensor3"){
+    getData("https://sensor3")
+   }
     
   return (
     <div className="chart">
@@ -35,7 +173,7 @@ const chart = ({dropDownValue}) => {
         
         width={500}
         height={400}
-        data={data_s1}
+        data={data1}
         margin={{
           top: 5,
           right: 30,

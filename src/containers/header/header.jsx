@@ -3,7 +3,6 @@ import Dropdown from '../leftbody/dropdown';
 
 import logo from '../../assets/weather.png';
 import './header.css'
-import {setText} from '../leftbody/dropdown';
 
 
 

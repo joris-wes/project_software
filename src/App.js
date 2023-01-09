@@ -25,7 +25,7 @@ const App = () => {
         <Header setDropDownData={setDropDownData} />
       </div>
       <div className='main__body'>
-        <Body dropDownData ={dropDownData}/>
+        <Body dropDownData ={dropDownData} xscope={xscope} yscope={yscope}/>
         <Footer setxScope ={setxScope} setyScope = {setyScope}  />
           </div>
     </div>

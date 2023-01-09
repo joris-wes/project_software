@@ -1,48 +1,31 @@
 import React from "react";
 import { useState } from "react";
+import { useEffect } from "react";
+import { Sector } from "recharts";
 import './footer.css';
-
-
-const StateArray = [];
-
-const changeTime = (value) => {
-
-    console.log(value)
-    const recipeUrl = "http://localhost:3000/api/recipes"
-    const PostBody = {
-        time: value,
-    }
-    const RequestMetadata = {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-   //     body: JSON.stringify(PostBody)
-    }
-    // fetch(recipeUrl, PostBody, RequestMetadata)
-}
-
-
-const handleClick = (value) => {
-   // console.log(StateArray)
-    StateArray.push(value);
-    const recipeUrl = "http://localhost:3000/api/recipes"
-    const PostBody = {
-      sensor: value,
-    }
-    const RequestMetadata ={
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-    //  body: JSON.stringify(PostBody)
-    }
-    fetch(recipeUrl, PostBody, RequestMetadata)
-}
+import axios from 'axios';
 
 const footer = ({setxScope, setyScope}) => {
     
-    
+ const [scale, setScale] = useState([]);
+ const getData = () => {
+    axios.get("https://sensor_data") // test server
+    .then((response)=>{
+      console.log(response)
+      const myData = response.data;
+      const newArr = []
+      for (let i=0; i<myData.length;i++){
+        let id = i;
+        let value = myData[i]; 
+        newArr.push({value, id})
+      }
+      setScale(newArr);
+      console.log(newArr);
+    });
+  }
+
+useEffect(()=>getData(), []);
+  
     return (
         <div className='footer'>
             <div class="dropup">
@@ -56,15 +39,15 @@ const footer = ({setxScope, setyScope}) => {
             </div>
             
             <ul class="donate-now">
-            <li onClick = {handleClick}>
+            <li onClick={setScale}>
                 <input type="radio" id="ws" name="duration" onClick={(e) => {setxScope("Hours")} }/>
                 <label for="hs">Hours</label>
             </li>
-            <li onClick ={handleClick}>
+            <li onClick={setScale}>
                 <input type="radio" id="ds" name="duration"  onClick={(e) => {setxScope("Days")} }/>
                 <label for="ds">Days</label>
             </li>
-            <li onClick={handleClick}>
+            <li onClick={setScale}>
                 <input type="radio" id="ws" name="duration" onClick={(e) => {setxScope("Weeks")} }/>
                 <label for="ws">Weeks</label>
             </li>

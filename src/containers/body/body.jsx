@@ -83,8 +83,8 @@ const data = [
 
 
 
-const body = ({dropDownData}) => {
-  
+const body = ({dropDownData, xscope, yscope}) => {
+  const [chartData, setChartData] = useState([]);
   
   useEffect(()=>{
     if(dropDownData.length != 0){
@@ -92,10 +92,18 @@ const body = ({dropDownData}) => {
     const newArray =[]
     for(let i=0;i<dropDownList.length;i++){
        newArray.push(dropDownList[i]);
-       
+
+    }
+    if (yscope === "Humidity"){
+      setChartData(yscope);
+    } else if (yscope ==="Temperature"){
+      setChartData(yscope);
+    } else if (yscope ==="Pressure"){
+      setChartData(yscope);
     }
     }
   })
+
  
   return (
     <div className='body'>
@@ -115,8 +123,8 @@ const body = ({dropDownData}) => {
             }}
           >
             <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="time" />
-            <YAxis />
+            <XAxis dataKey={xscope} />
+            <YAxis dataKey={yscope}/>
             <Tooltip />
             <Legend />
             
