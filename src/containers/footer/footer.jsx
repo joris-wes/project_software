@@ -8,23 +8,10 @@ import axios from 'axios';
 const footer = ({setxScope, setyScope}) => {
     
  const [scale, setScale] = useState([]);
- const getData = () => {
-    axios.get("https://sensor_data") // test server
-    .then((response)=>{
-      console.log(response)
-      const myData = response.data;
-      const newArr = []
-      for (let i=0; i<myData.length;i++){
-        let id = i;
-        let value = myData[i]; 
-        newArr.push({value, id})
-      }
-      setScale(newArr);
-      console.log(newArr);
-    });
-  }
-
-useEffect(()=>getData(), []);
+ useEffect(()=>{
+   // axios.post("https://server", scale)
+   // console.log(scale);
+ });
   
     return (
         <div className='footer'>
@@ -44,7 +31,7 @@ useEffect(()=>getData(), []);
                 <label for="hs">Hours</label>
             </li>
             <li onClick={setScale}>
-                <input type="radio" id="ds" name="duration"  onClick={(e) => {setxScope("Days")} }/>
+              <input type="radio" id="ds" name="duration"  onClick={(e) => {setxScope("Days")} }/>
                 <label for="ds">Days</label>
             </li>
             <li onClick={setScale}>
@@ -53,7 +40,7 @@ useEffect(()=>getData(), []);
             </li>
             </ul>
 </div>
-    )
+    );
 }
 // % millibars celcius %
 export default footer;

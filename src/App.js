@@ -7,11 +7,12 @@ import './App.css';
 import {Header, Body, Footer} from './containers';
 const App = () => {
 
-  const [dropDownData, setDropDownData] = useState("");  
+  const [dropDownData, setDropDownData] = useState('{}');  
   const [xscope,setxScope] = useState('');
   const [yscope, setyScope] = useState('');
 
   useEffect(()=>{
+    // axios.post("http://server", yscope, xscope)
     console.log("y: " + yscope);
     console.log("x: " + xscope);
     console.log("Selected sensors: "+ JSON.stringify(dropDownData));

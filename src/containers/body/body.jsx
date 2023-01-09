@@ -84,31 +84,23 @@ const data = [
 
 
 const body = ({dropDownData, xscope, yscope}) => {
-  const [chartData, setChartData] = useState([]);
+  const [listOfSensors, setListOfSensors] = useState("");
+
   
   useEffect(()=>{
-    if(dropDownData.length != 0){
-    let dropDownList = JSON.parse(dropDownData);
-    const newArray =[]
-    for(let i=0;i<dropDownList.length;i++){
-       newArray.push(dropDownList[i]);
-
-    }
-    if (yscope === "Humidity"){
-      setChartData(yscope);
-    } else if (yscope ==="Temperature"){
-      setChartData(yscope);
-    } else if (yscope ==="Pressure"){
-      setChartData(yscope);
-    }
-    }
+    const array = JSON.parse(dropDownData);
+    let v = "";
+    for (let i=0;i<array.length;i++){
+      v = v+array[i].value+", ";
+      }
+    setListOfSensors(v);
   })
 
  
   return (
     <div className='body'>
        <h1 id="one">You have selected the temperature graph for:</h1>
-       <h1 id="one">{dropDownData}</h1>
+       <h1 id="one">{listOfSensors}</h1>
         <div className='graphbody__container'>
             <Chart chartData/>
             <LineChart   
