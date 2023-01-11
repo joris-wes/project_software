@@ -135,32 +135,25 @@ const data1 = [
 ]
 
 const chart = ({dropDownValue}) => {
-
-   const [chartData, setChartData] = useState('');
-
+   const [data, setData] = useState([]);
    const getData = () => {
-    axios.get("https://sensor_data") // test server
+    axios.get("https://ae8a-109-252-14-210.eu.ngrok.io/lht-wierden/data/Hum_SHT")
     .then((response)=>{
       console.log(response)
       const myData = response.data;
-      const newArr = []
-      for (let i=0; i<myData.length;i++){
-       let val = myData[i];
-       newArr.push({val});
-      }
-      setChartData(newArr);
-      console.log(newArr);
+      setData(myData);
+      console.log(myData);
     });
-  }
-
+   }
+   
    useEffect(()=>getData(), []);
 
   return (
     <div className="chart">
       <LineChart 
-        width={500}
-        height={400}
-        data={data1}
+        width={600}
+        height={500}
+        data={data}
         margin={{
           top: 5,
           right: 30,
@@ -169,13 +162,12 @@ const chart = ({dropDownValue}) => {
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="time" />
+        <XAxis dataKey="time"/>
         <YAxis />
         <Tooltip />
         <Legend />
-        
-        <Line connectNulls stype="monotone" dataKey="temperature" stroke="#82ca9d" />
         <Brush height={17} />
+        <Line connectNulls type="monotone" dataKey="value" stroke="#82ca9d" />
       </LineChart>
     </div>
   );

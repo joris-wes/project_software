@@ -7,11 +7,7 @@ import axios from 'axios';
 
 const footer = ({setxScope, setyScope}) => {
     
- const [scale, setScale] = useState([]);
- useEffect(()=>{
-   // axios.post("https://server", scale)
-   // console.log(scale);
- });
+ // const [scale, setScale] = useState([]);
   
     return (
         <div className='footer'>
@@ -26,15 +22,15 @@ const footer = ({setxScope, setyScope}) => {
             </div>
             
             <ul class="donate-now">
-            <li onClick={setScale}>
+            <li>
                 <input type="radio" id="ws" name="duration" onClick={(e) => {setxScope("Hours")} }/>
                 <label for="hs">Hours</label>
             </li>
-            <li onClick={setScale}>
+            <li>
               <input type="radio" id="ds" name="duration"  onClick={(e) => {setxScope("Days")} }/>
                 <label for="ds">Days</label>
             </li>
-            <li onClick={setScale}>
+            <li>
                 <input type="radio" id="ws" name="duration" onClick={(e) => {setxScope("Weeks")} }/>
                 <label for="ws">Weeks</label>
             </li>

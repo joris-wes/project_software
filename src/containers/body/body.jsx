@@ -99,7 +99,6 @@ const body = ({dropDownData, xscope, yscope}) => {
        <h1 id="one">{listOfSensors}</h1>
         <div className='graphbody__container'>
             <Chart chartData/>
-            <Chart chartData/>
         </div>
     </div>
   )
