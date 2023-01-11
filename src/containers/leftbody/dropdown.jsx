@@ -9,8 +9,9 @@ const Dropdown = ({
 
 const [fetchedData, setfetchedData] = useState([]);
 
-    const getData = () => {
-      axios.get("https://a8fb-92-185-143-90.eu.ngrok.io/list") // test server
+    const getData = () => {  
+      axios.get("http://localhost:8080/list")
+       // test server
       .then((response)=>{
         console.log(response)
         const myData = response.data;
@@ -31,7 +32,6 @@ const [fetchedData, setfetchedData] = useState([]);
     return ( 
       <Multiselect
         options={fetchedData} // Options to display in the dropdown
-        // selectedValues={stateTEST.selectedValues} // Preselected value to persist in dropdown
         onSelect={
           (e)=> setDropDownData(JSON.stringify(e))
         } // Function will trigger on select event

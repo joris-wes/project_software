@@ -81,11 +81,8 @@ const data = [
   },
 ]
 
-
-
 const body = ({dropDownData, xscope, yscope}) => {
   const [listOfSensors, setListOfSensors] = useState("");
-
   
   useEffect(()=>{
     const array = JSON.parse(dropDownData);
@@ -96,33 +93,13 @@ const body = ({dropDownData, xscope, yscope}) => {
     setListOfSensors(v);
   })
 
- 
   return (
     <div className='body'>
        <h1 id="one">You have selected the temperature graph for:</h1>
        <h1 id="one">{listOfSensors}</h1>
         <div className='graphbody__container'>
             <Chart chartData/>
-            <LineChart   
-            width={500}
-            height={400}
-            data={data}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 20,
-              bottom: 5
-            }}
-          >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey={xscope} />
-            <YAxis dataKey={yscope}/>
-            <Tooltip />
-            <Legend />
-            
-            <Line connectNulls stype="monotone" dataKey="temperature_sensor2" stroke="#FF0000" />
-            <Brush height={17} />
-          </LineChart>        
+            <Chart chartData/>
         </div>
     </div>
   )

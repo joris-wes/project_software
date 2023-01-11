@@ -7,8 +7,6 @@ import { ChartHook } from '../header/header';
 import Header from "../header/header";
 import axios from 'axios';
 
-
-
 const data_s1 = 
   [
     {
@@ -137,6 +135,7 @@ const data1 = [
 ]
 
 const chart = ({dropDownValue}) => {
+
    const [chartData, setChartData] = useState('');
 
    const getData = () => {
@@ -155,22 +154,10 @@ const chart = ({dropDownValue}) => {
   }
 
    useEffect(()=>getData(), []);
-  
-   if(dropDownValue==="sensor1"){
-    getData("https://sensor1");
-   } else if (dropDownValue==="sensor2"){
-    getData("https://sensor2");
-   } else if (dropDownValue==="sensor3"){
-    getData("https://sensor3")
-   }
-    
+
   return (
     <div className="chart">
-
-
-
       <LineChart 
-        
         width={500}
         height={400}
         data={data1}
