@@ -83,22 +83,32 @@ const data = [
 
 const body = ({dropDownData, xscope, yscope}) => {
   const [listOfSensors, setListOfSensors] = useState("");
+  const [listofurls, setListofUrl] = useState([]);
+  const ParsedYscopeOptions ={
+    humidity: "Hum_SHT",
+    temperature: "Temp_SHT",
+    illumination: "Ill_SHT"
+  }
   
   useEffect(()=>{
     const array = JSON.parse(dropDownData);
     let v = "";
+    let urlArray = []
     for (let i=0;i<array.length;i++){
       v = v+array[i].value+", ";
+      let url = `https://ae8a-109-252-14-210.eu.ngrok.io/${array[i].value}/data/${ParsedYscopeOptions[yscope]}`;
+      urlArray.push(url)
       }
-    setListOfSensors(v);
-  })
+    setListofUrl(urlArray);
+    setListOfSensors(v); 
+  });
 
   return (
     <div className='body'>
        <h1 id="one">You have selected the temperature graph for:</h1>
        <h1 id="one">{listOfSensors}</h1>
         <div className='graphbody__container'>
-            <Chart chartData/>
+            <Chart urlArray/>
         </div>
     </div>
   )
