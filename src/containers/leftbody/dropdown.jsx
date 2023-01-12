@@ -10,7 +10,7 @@ const Dropdown = ({
 const [fetchedData, setfetchedData] = useState([]);
 
     const getData = () => {  
-      axios.get("https://ae8a-109-252-14-210.eu.ngrok.io/list")
+      axios.get("https://e2ed-109-252-14-210.eu.ngrok.io/list")
        // test server
       .then((response)=>{
         console.log(response)
