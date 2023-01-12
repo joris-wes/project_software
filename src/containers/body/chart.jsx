@@ -12,7 +12,7 @@ const chart = ({listofurls}) => {
    let listofURLS = []
 
    const getData = () => {
-    axios.get("https://e2ed-109-252-14-210.eu.ngrok.io/lht-gronau/data/Hum_SHT")
+    axios.get({listofurls})
     .then((response)=>{
       console.log(response)
       const myData = response.data;

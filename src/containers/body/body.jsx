@@ -29,10 +29,10 @@ const body = ({dropDownData, xscope, yscope}) => {
       let url = `https://e2ed-109-252-14-210.eu.ngrok.io/${array[i].value}/data/${ParsedYscopeOptions[yscope]}`;
       urlArray.push(url)
       }
-   //  console.log(urlArray[0]);
-    // setListofUrl(urlArray);
+    console.log(urlArray[0]);
+    setListofUrl(urlArray);
     setListOfSensors(v); 
-  });
+  },[dropDownData, yscope, xscope]);
 
   
 
