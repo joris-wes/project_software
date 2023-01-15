@@ -12,10 +12,11 @@ const body = ({dropDownData, xscope, yscope}) => {
 
   const ParsedYscopeOptions = {
     Humidity: "humidity", 
-    Temperature: "temperature_out",
+    Temperature_out: "temperature_out",
     Temperature: "temperature",
-    Illumination: "illumination",  
+    Light: "light",  
     Pressure: "pressure",
+    
   }
 
 

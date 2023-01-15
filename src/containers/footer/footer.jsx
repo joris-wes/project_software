@@ -7,17 +7,18 @@ import axios from 'axios';
 
 const footer = ({setxScope, setyScope}) => {
     
- // const [scale, setScale] = useState([]);
-  
+    const [TitileCaption, setTitleCaption] = useState("Select Options");
+
     return (
         <div className='footer'>
             <div class="dropup">
-                <button class="dropbtn">Select an option</button>
+                <button class="dropbtn">{TitileCaption}</button>
                 <div class="dropup-content">
-                    <a href="#" onClick={(e) => {setyScope("Temperature")}}>Temperature</a>
-                    <a href="#" onClick={(e) => {setyScope("Humidity")}}>Humidity</a>
-                    <a href="#" onClick={(e) => {setyScope("Pressure")}}>Pressure</a>
-                    <a href="#" onClick={(e) => {setyScope("Light")}}>Light</a>
+                    <a href="#" onClick={(e) => {setyScope("Temperature"); setTitleCaption("Temperature")}}>Temperature</a>
+                    <a href="#" onClick={(e) => {setyScope("Humidity"); setTitleCaption("Humidity")}}>Humidity</a>
+                    <a href="#" onClick={(e) => {setyScope("Pressure"); setTitleCaption("Pressure")}}>Pressure</a>
+                    <a href="#" onClick={(e) => {setyScope("Light"); setTitleCaption("Light")}}>Light</a>
+                    <a href="#" onClick={(e)=> {setyScope("Temperature_out"); setTitleCaption("Temperature Out")}}>Temperature Out</a>
                 </div>
             </div>
             
