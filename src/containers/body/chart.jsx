@@ -1,5 +1,5 @@
 import React from "react";
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, Brush } from 'recharts';
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Area  , ResponsiveContainer, AreaChart } from 'recharts';
 import { useState } from 'react';
 import { useEffect } from "react";
 import { ChartHook } from '../header/header';
@@ -8,7 +8,7 @@ import axios from 'axios';
 
 const chart = ({url}) => {
   const [data, setData] = useState([]);
-
+  const [sensorname, setSensorName] = useState("");
 
     const getData = async () => {
         try {
@@ -21,13 +21,13 @@ const chart = ({url}) => {
 
     useEffect(() => {
         getData();
-        console.log("url", url);
+                
     }, [url]);
-
+            
     return (
         <div className="chart">
-            {data.length !== 0 ? <ResponsiveContainer width={600} height={"60%"}>
-                <LineChart
+            {data.length !== 0 ? <ResponsiveContainer width={600} height={"95%"}>
+                <AreaChart
                     // width={1200}
                     // height={450}
                     data={data}
@@ -43,9 +43,8 @@ const chart = ({url}) => {
                     <YAxis/>
                     <Tooltip/>
                     <Legend/>
-                    <Brush height={17}/>
-                    <Line connectNulls type="monotone" dataKey="value" stroke="#82ca9d"/>
-                </LineChart>
+                    <Area connectNulls type="monotone" dataKey="value" activeDot={{r:5}} stroke="#245BA7" fill="#7DACEE" />
+                </AreaChart>
             </ResponsiveContainer> : <h1 style={{color:"black"}}>No Data</h1>}
 
         </div>

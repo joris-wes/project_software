@@ -33,6 +33,7 @@ const body = ({dropDownData, xscope, yscope}) => {
 
     return (
         <div className='body'>
+
             <h1 id="one">You have selected the graph for:</h1>
             <h1 id="one">{listOfSensors}</h1>
             <div className='graphbody__container'>
