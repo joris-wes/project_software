@@ -11,11 +11,10 @@ const body = ({dropDownData, xscope, yscope}) => {
   const [listofurls, setListofUrl] = useState([]);
 
   const ParsedYscopeOptions = {
-    Humidity: "Hum_SHT",
     Humidity: "humidity", 
-    Temperature: "TempC_DC",
-    Temperature: "TempC_SHT",
-    Illumination: "Ill_SHT",
+    Temperature: "temperature_out",
+    Temperature: "temperature",
+    Illumination: "illumination",  
     Pressure: "pressure",
   }
 
@@ -26,13 +25,14 @@ const body = ({dropDownData, xscope, yscope}) => {
     let urlArray = []
     for (let i=0;i<array.length;i++) {
       v = v+array[i].value+", ";
-      let url = `https://e2ed-109-252-14-210.eu.ngrok.io/${array[i].value}/data/${ParsedYscopeOptions[yscope]}`;
+      let url = `https://ba5b-83-82-70-70.eu.ngrok.io/${array[i].value}/data/${ParsedYscopeOptions[yscope]}`;
       urlArray.push(url)
       }
     console.log(urlArray[0]);
     setListofUrl(urlArray);
     setListOfSensors(v); 
-  },[dropDownData, yscope, xscope]);
+
+  },[dropDownData, yscope, xscope, listOfSensors]);
 
   
 

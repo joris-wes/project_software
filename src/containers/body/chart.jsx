@@ -6,22 +6,24 @@ import { ChartHook } from '../header/header';
 import Header from "../header/header";
 import axios from 'axios';
 
-const chart = ({listofurls}) => {
+const chart = (listofurls) => {
    const [data, setData] = useState([]);
 
-   let listofURLS = []
-
    const getData = () => {
-    axios.get({listofurls})
-    .then((response)=>{
-      console.log(response)
-      const myData = response.data;
-      setData(myData);
-      console.log(myData);
-    });
-   }
+    console.log(listofurls.listofurls)
+    for (let i=0; i<listofurls.listofurls.length;i++){
+      axios.get(listofurls.listofurls[0])
+      .then((response)=>{
+        console.log(response)
+        const myData = response.data;
+        setData(myData);
+        console.log(myData);
+      });
+    }
    
-   useEffect(()=>getData(), []);
+   }
+   console.log(listofurls);
+   useEffect(()=>getData(), [listofurls]);
 
   return (
     <div className="chart">
