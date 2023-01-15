@@ -16,7 +16,6 @@ const body = ({dropDownData, xscope, yscope}) => {
     Temperature: "temperature",
     Light: "light",  
     Pressure: "pressure",
-    
   }
 
 
@@ -29,11 +28,10 @@ const body = ({dropDownData, xscope, yscope}) => {
       let url = `https://ba5b-83-82-70-70.eu.ngrok.io/${array[i].value}/data/${ParsedYscopeOptions[yscope]}`;
       urlArray.push(url)
       }
-    console.log(urlArray[0]);
     setListofUrl(urlArray);
     setListOfSensors(v); 
-
-  },[dropDownData, yscope, xscope, listOfSensors]);
+    console.log("urlArray",urlArray);
+  },[yscope, xscope, dropDownData]);
 
   
 
@@ -42,7 +40,7 @@ const body = ({dropDownData, xscope, yscope}) => {
        <h1 id="one">You have selected the temperature graph for:</h1>
        <h1 id="one">{listOfSensors}</h1>
         <div className='graphbody__container'>
-            <Chart listofurls={listofurls}/>
+            {listofurls.map((url)=>{return <Chart listofurls={url} />})}
         </div>
     </div>
   )

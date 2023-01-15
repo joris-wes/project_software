@@ -11,13 +11,15 @@ const App = () => {
   const [xscope,setxScope] = useState('');
   const [yscope, setyScope] = useState('');
 
+ 
+
   useEffect(()=>{
-    // axios.post("http://server", yscope, xscope)
     console.log("y: " + yscope);
     console.log("x: " + xscope);
     console.log("Selected sensors: "+ JSON.stringify(dropDownData));
+    
   }, [yscope, xscope, dropDownData])
-  
+ 
 
 
   return (

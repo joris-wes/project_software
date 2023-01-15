@@ -9,32 +9,49 @@ import axios from 'axios';
 const chart = (listofurls) => {
    const [data, setData] = useState([]);
 
-   const getData = () => {
-    console.log(listofurls.listofurls)
-    setData([]);
-    console.log(data);
-    for (let i=0; i<listofurls.listofurls.length;i++){
-      axios.get(listofurls.listofurls[0])
-      .then((response)=>{
-        console.log(response)
-        const myData = response.data;
-        setData(myData);
-        
-      })
-      .catch((error)=>{
-        console.log(error);
-      }
-      )
+  //  const getData = async () => {
+  //   console.log(listofurls);
+  //   // console.log("THIS IS LIST OF URLS", listofurls.listofurls)
+  //   // setData([]);
+  //   // console.log("THIS IS DATA",data);
+  //   // for (let i=0; i<listofurls.listofurls.length;i++){
+  //   //   console.log("THIS IS I",i)
+  //   try {
+  //     const data = await axios.get(listofurls.listofurls);
+  //     setData(data.data)
+  //     } catch (e){
+  //     setData([]);
+  //     }
       
-    }
+  //   //}
    
-   }
+   //} 
    
-   useEffect(()=>getData(), [listofurls]);
+   useEffect(async ()=>
+   {
+    axios.get(listofurls.listOfUrls).then(response => {
+      setData(response.data);
+  }).catch(e=>{
+      setData([]);
+  })
+  //   console.log(listofurls);
+  //  // console.log("THIS IS LIST OF URLS", listofurls.listofurls)
+  //  // setData([]);
+  //  // console.log("THIS IS DATA",data);
+  //  // for (let i=0; i<listofurls.listofurls.length;i++){
+  //  //   console.log("THIS IS I",i)
+  //  try {
+  //    const data = await axios.get(listofurls.listofurls);
+  //    setData(data.data)
+  //    } catch (e){
+  //     console.log(e);
+  //    setData([]);
+  //    }
+    }, [listofurls]);
 
   return (
     <div className="chart">
-      <ResponsiveContainer width={1200} height={"90%"}>
+      {data.length !== 0 ?  <ResponsiveContainer width={1200} height={"90%"}>
       <LineChart 
         // width={1200}
         // height={450}
@@ -54,7 +71,8 @@ const chart = (listofurls) => {
         <Brush height={17} />
         <Line connectNulls type="monotone" dataKey="value" stroke="#82ca9d" />
       </LineChart>
-      </ResponsiveContainer>
+      </ResponsiveContainer>: null}
+     
     </div>
   );
 }
