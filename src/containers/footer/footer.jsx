@@ -28,7 +28,7 @@ const footer = ({ setxScope, setyScope }) => {
 
             <ul class="donate-now">
                 <li>
-                    <input type="radio" id="ws" name="duration" onClick={(e) => { setxScope("Hours") }} checked />
+                    <input type="radio" id="hs" name="duration" onClick={(e) => { setxScope("Hours") }} />
                     <label for="hs">Hours</label>
                 </li>
                 <li>

@@ -11,7 +11,7 @@ import { Header, Body, Footer } from './containers';
 const App = () => {
 
   const [dropDownData, setDropDownData] = useState('{}');
-  const [xscope, setxScope] = useState('Hours');
+  const [xscope, setxScope] = useState('');
   const [yscope, setyScope] = useState('');
   // useEffect is used to log the data in the console. This is used for debugging purposes
   useEffect(()=>{
