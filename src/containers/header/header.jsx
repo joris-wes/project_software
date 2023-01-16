@@ -8,10 +8,8 @@ const header = ({setDropDownData}) => {
     <div className='headerbar'>
         <img src={logo} alt="weather"/>
         <h1>Weather Application</h1>
-        <div className='dropdown'>
             <Dropdown 
-            setDropDownData={setDropDownData}/> 
-        </div>
+            setDropDownData={setDropDownData}/>
     </div>
     
   )

@@ -98,7 +98,7 @@ display: flex;
 
 .donate-now input[type="radio"]:checked+label,
 .Checked+label {
-  background: #2980B9;
+  background: #3498DB;
   color: white;
 }
 

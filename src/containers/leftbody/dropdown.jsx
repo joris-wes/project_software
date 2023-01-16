@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef, CloseIcon } from "react";
 import Multiselect from 'multiselect-react-dropdown';
 import axios from 'axios';
+import './Dropdown.css';
 
 const Dropdown = ({
   setDropDownData,
@@ -9,28 +10,30 @@ const Dropdown = ({
 
 const [fetchedData, setfetchedData] = useState([]);
 
-    const getData = () => {  
-      axios.get("https://ba5b-83-82-70-70.eu.ngrok.io/list")
-       // test server
-      .then((response)=>{
-        console.log(response)
-        const myData = response.data;
+    const getData = async () => {  
+      try {
+        const response = await axios.get("https://0e8d-145-76-250-107.eu.ngrok.io/list");
+        const data = response.data 
         const newArr = []
-        for (let i=0; i<myData.length;i++){
+        for (let i=0; i<data.length;i++){
           let id = i;
-          let value = myData[i]; 
+          let value = data[i]; 
           newArr.push({value, id})
         }
         setfetchedData(newArr);
-        console.log(newArr);
-      });
+      } catch (e) {
+        console.log(e);
+      }
     }
 
-  useEffect(()=>getData(), []);
+  useEffect(()=>{
+    getData();
+  }, []);
     
 
     return ( 
-      <Multiselect
+      <div className="dropdown">
+      <Multiselect 
         options={fetchedData} // Options to display in the dropdown
         onSelect={
           (e)=> setDropDownData(JSON.stringify(e))
@@ -39,7 +42,9 @@ const [fetchedData, setfetchedData] = useState([]);
           (e) => setDropDownData(JSON.stringify(e))
         } // Function will trigger on remove event
         displayValue="value" // Property name to display in the dropdown options
-    />)
+    />
+      </div>
+    )
 };
 
 

@@ -8,7 +8,7 @@ import {Header, Body, Footer} from './containers';
 const App = () => {
 
   const [dropDownData, setDropDownData] = useState('{}');  
-  const [xscope,setxScope] = useState('');
+  const [xscope,setxScope] = useState('Hours');
   const [yscope, setyScope] = useState('');
 
  
