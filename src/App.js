@@ -11,14 +11,14 @@ import { Header, Body, Footer } from './containers';
 const App = () => {
 
   const [dropDownData, setDropDownData] = useState('{}');
-  const [xscope, setxScope] = useState('');
+  const [xscope, setxScope] = useState('Hours');
   const [yscope, setyScope] = useState('');
   // useEffect is used to log the data in the console. This is used for debugging purposes
-  // useEffect(()=>{
-  //   console.log("y: " + yscope);
-  //   console.log("x: " + xscope);
-  //   console.log("Selected sensors: "+ JSON.stringify(dropDownData));
-  // }, [yscope, xscope, dropDownData])
+  useEffect(()=>{
+    console.log("y: " + yscope);
+    console.log("x: " + xscope);
+    console.log("Selected sensors: "+ JSON.stringify(dropDownData));
+  }, [yscope, xscope, dropDownData])
   // The return statement is used to render the components within the site
   return (
     <div className="App">

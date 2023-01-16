@@ -36,7 +36,7 @@ const footer = ({ setxScope, setyScope }) => {
                     <label for="ds">Days</label>
                 </li>
                 <li>
-                    <input type="radio" id="ws" name="duration" onClick={(e) => { setxScope("Weeks") }} />
+                    <input type="radio" id="ws" name="duration" onClick={(e) => { setxScope("Months") }} />
                     <label for="ws">Months</label>
                 </li>
             </ul>

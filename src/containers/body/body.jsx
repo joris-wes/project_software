@@ -37,10 +37,9 @@ const body = ({ dropDownData, xscope, yscope }) => {
 
     // ParsedXScopeOptions is used for the X-scope of the graph
     const ParsedXscopeOptions = {
-        Day: "day",
-        Week: "week",
-        Month: "month",
-        Year: "year",
+        Hours: "hour",
+        Days: "day",
+        Months: "month",
     }
 
     // This useEffect is used to parse the data from the dropdown component in order to show it on the page as a string
@@ -50,15 +49,17 @@ const body = ({ dropDownData, xscope, yscope }) => {
         const sensornames = JSON.parse(dropDownData);
 
         let displaySensorNames = "";
-        let urlArray = []
+        let urlArray = [];
 
         // Generating the url for the graph component
-        for (let i = 0; i < displaySensorNames.length; i++) {
+        for (let i = 0; i < sensornames.length; i++) {
+            console.log("sensornames ",displaySensorNames);
             displaySensorNames = displaySensorNames + sensornames[i].value + ", ";
-            let url = `https://0e8d-145-76-250-107.eu.ngrok.io/${sensornames[i].value}/data/${ParsedYscopeOptions[yscope]}/${ParsedXscopeOptions[xscope]}`;
-            urlArray.push(url)
+            let url = `https://9bba-83-82-70-70.eu.ngrok.io/${sensornames[i].value}/data/${ParsedYscopeOptions[yscope]}/${ParsedXscopeOptions[xscope]}`;
+            urlArray.push(url);
+            console.log(url);
         }
-
+        
         setListofUrl(urlArray);
         setListOfSensors(displaySensorNames);
 
