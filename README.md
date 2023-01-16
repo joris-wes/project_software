@@ -1,3 +1,10 @@
+# Weather Application web site
+### This repository contains source code of web application.
+In general, this application written on JavaScript library called React. The functional components can be found in the source.
+
+## Bugs and issues
+Usually, this application shows the error on runnig.
+
 To run the localhost site try 
 ```console
 npm start
