@@ -3,7 +3,7 @@
 */
 
 .footer {
-  position: absolute;
+  position: fixed;
   display: flex;
   right: 0;
   bottom: 0;
@@ -18,13 +18,14 @@
 
 /* Dropup Button */
 .dropbtn {
+  margin-top: 7px;
   background-color: #3498DB;
   color: white;
   padding: 16px;
   font-size: 16px;
   border: none;
-  border-radius: 5px;
-
+  /* display: flex; */
+  justify-self: center;
 
 }
 
