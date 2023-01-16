@@ -1,6 +1,10 @@
+/*
+  * This is the css file for the footer 
+*/
+
 .footer {
-position: absolute;
-display: flex;
+  position: absolute;
+  display: flex;
   right: 0;
   bottom: 0;
   left: 0;
@@ -20,8 +24,8 @@ display: flex;
   font-size: 16px;
   border: none;
   border-radius: 5px;
- 
-  
+
+
 }
 
 /* The container <div> - needed to position the dropup content */
@@ -37,7 +41,7 @@ display: flex;
   bottom: 0;
   background-color: #f1f1f1;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -50,7 +54,9 @@ display: flex;
 }
 
 /* Change color of dropup links on hover */
-.dropup-content a:hover {background-color: #ddd}
+.dropup-content a:hover {
+  background-color: #ddd
+}
 
 /* Show the dropup menu on hover */
 .dropup:hover .dropup-content {
@@ -61,11 +67,12 @@ display: flex;
 .dropup:hover .dropbtn {
   background-color: #2980B9;
 }
+
 .donate-now {
   list-style-type: none;
   margin: auto;
   padding: 0;
-  
+
 }
 
 .donate-now li {
@@ -76,9 +83,8 @@ display: flex;
   position: relative;
   background: white;
   border-radius: 5px;
- 
-}
 
+}
 
 .donate-now label,
 .donate-now input {
@@ -101,7 +107,6 @@ display: flex;
   background: #3498DB;
   color: white;
 }
-
 
 .donate-now label {
   padding: 5px;
