@@ -22,7 +22,7 @@ const Dropdown = ({ setDropDownData }) => {
     try {
 
       // Data from the server fetched using axios
-      const response = await axios.get("https://9bba-83-82-70-70.eu.ngrok.io/list");
+      const response = await axios.get("https://ef7b-145-76-250-107.eu.ngrok.io/list");
       const data = response.data
       const newArr = []
 

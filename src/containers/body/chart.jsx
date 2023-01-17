@@ -61,7 +61,7 @@ const chart = ({ url }) => {
           <Legend />
           <Area connectNulls type="monotone" dataKey="value" activeDot={{ r: 5 }} stroke="#245BA7" fill="#7DACEE" />
         </AreaChart>
-      </ResponsiveContainer> : <h2 style={{ color: "black" }}>Nothing to diplay</h2>}
+      </ResponsiveContainer> : <h2 style={{ color: "black" }}>Nothing to display</h2>}
 
     </div>
   );

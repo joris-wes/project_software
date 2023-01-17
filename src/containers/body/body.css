@@ -28,7 +28,7 @@
     justify-content: center;
     ;
     height: 100%;
-
+    margin-bottom: 30%;
     flex-wrap: wrap;
 }
 
@@ -48,4 +48,5 @@
 
 .chart {
     min-height: 400px;
+    margin-bottom: 10%;
 }

@@ -55,7 +55,7 @@ const body = ({ dropDownData, xscope, yscope }) => {
         for (let i = 0; i < sensornames.length; i++) {
             console.log("sensornames ",displaySensorNames);
             displaySensorNames = displaySensorNames + sensornames[i].value + ", ";
-            let url = `https://9bba-83-82-70-70.eu.ngrok.io/${sensornames[i].value}/data/${ParsedYscopeOptions[yscope]}/${ParsedXscopeOptions[xscope]}`;
+            let url = `https://ef7b-145-76-250-107.eu.ngrok.io/${sensornames[i].value}/data/${ParsedYscopeOptions[yscope]}/${ParsedXscopeOptions[xscope]}`;
             urlArray.push(url);
             console.log(url);
         }
