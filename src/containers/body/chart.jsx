@@ -44,6 +44,7 @@ const chart = ({ url }) => {
            ResponsiveContainer allows chart to render one by one until all of the graphs from selected sensors are displayed
          */
       }
+      <h2>{url.split("/")[3]}</h2>
       {data.length !== 0 ? <ResponsiveContainer width={600} height={"95%"}>
         <AreaChart
           data={data}
@@ -61,7 +62,7 @@ const chart = ({ url }) => {
           <Legend />
           <Area connectNulls type="monotone" dataKey="value" activeDot={{ r: 5 }} stroke="#245BA7" fill="#7DACEE" />
         </AreaChart>
-      </ResponsiveContainer> : <h2 style={{ color: "black" }}>Nothing to display</h2>}
+      </ResponsiveContainer> : <h2 style={{ color: "black" }}>Nothing to display </h2>}
 
     </div>
   );

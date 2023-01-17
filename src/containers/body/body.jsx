@@ -55,7 +55,7 @@ const body = ({ dropDownData, xscope, yscope }) => {
         for (let i = 0; i < sensornames.length; i++) {
             console.log("sensornames ",displaySensorNames);
             displaySensorNames = displaySensorNames + sensornames[i].value + ", ";
-            let url = `https://ef7b-145-76-250-107.eu.ngrok.io/${sensornames[i].value}/data/${ParsedYscopeOptions[yscope]}/${ParsedXscopeOptions[xscope]}`;
+            let url = `https://72a6-83-82-70-70.eu.ngrok.io/${sensornames[i].value}/data/${ParsedYscopeOptions[yscope]}/${ParsedXscopeOptions[xscope]}`;
             urlArray.push(url);
             console.log(url);
         }
@@ -69,12 +69,12 @@ const body = ({ dropDownData, xscope, yscope }) => {
     return (
         <div className='body'>
 
-            <h1 id="one">You have selected the graph for:</h1>
-            <h1 id="one">{listOfSensors}</h1>
+            {/* <h1 id="one">You have selected the graph for:</h1>
+            <h1 id="one">{listOfSensors}</h1> */}
             <div className='graphbody__container'>
-                {/* Displaying the graph and passing there urls */}
+                {/* Displaying the graphs and passing there urls */}
                 {listofurls.map((url) => {
-                    return <Chart url={url} />
+                    return  <Chart url={url}/>
                 })}
             </div>
         </div>

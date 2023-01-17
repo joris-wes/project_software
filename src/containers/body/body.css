@@ -25,10 +25,10 @@
     flex-direction: row;
     position: relative;
     margin: 5%;
+    margin-top: 1%;
     justify-content: center;
     ;
     height: 100%;
-    margin-bottom: 30%;
     flex-wrap: wrap;
 }
 
@@ -47,6 +47,9 @@
 }
 
 .chart {
+    display: flex;
+    flex-direction: column;
     min-height: 400px;
-    margin-bottom: 10%;
+    margin: 1%;
+    align-items: center;
 }
