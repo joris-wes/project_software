@@ -1,6 +1,6 @@
 /*
   * This file is a Chart component file
-  * It is used to display the graph for the selected sensors
+  * It is used to display the graph for the selected sensors and the raw data
   * It uses the recharts library to display the graph
   * It uses the axios library to get the data from the server
   * It uses the useEffect hook to get the data from the server
@@ -15,6 +15,7 @@ import axios from 'axios';
 const chart = ({ url }) => {
 
   const [data, setData] = useState([]);
+  let sensornames = url.split("/")[4];
 
   // Get the data from the server
   const getData = async () => {
@@ -44,7 +45,8 @@ const chart = ({ url }) => {
            ResponsiveContainer allows chart to render one by one until all of the graphs from selected sensors are displayed
          */
       }
-      <h2>{url.split("/")[3]}</h2>
+      <h2>{sensornames}</h2>
+      <a href={`https://9970-83-82-70-70.eu.ngrok.io/api/${sensornames}/data/raw`} style={{color: "darkblue"}}>Raw data</a>
       {data.length !== 0 ? <ResponsiveContainer width={600} height={"95%"}>
         <AreaChart
           data={data}

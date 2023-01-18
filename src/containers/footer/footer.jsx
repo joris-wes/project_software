@@ -18,11 +18,11 @@ const footer = ({ setxScope, setyScope }) => {
             <div class="dropup">
                 <button class="dropbtn">{TitileCaption}</button>
                 <div class="dropup-content">
-                    <a href="#" onClick={(e) => { setyScope("Temperature"); setTitleCaption("Temperature") }}>Temperature</a>
-                    <a href="#" onClick={(e) => { setyScope("Humidity"); setTitleCaption("Humidity") }}>Humidity</a>
-                    <a href="#" onClick={(e) => { setyScope("Pressure"); setTitleCaption("Pressure") }}>Pressure</a>
-                    <a href="#" onClick={(e) => { setyScope("Light"); setTitleCaption("Light") }}>Light</a>
-                    <a href="#" onClick={(e) => { setyScope("Temperature_out"); setTitleCaption("Temperature Out") }}>Temperature Out</a>
+                    <a href="#" onClick={(e) => { setyScope("Temperature"); setTitleCaption("Temperature in ℃") }}>Temperature in ℃</a>
+                    <a href="#" onClick={(e) => { setyScope("Humidity"); setTitleCaption("Humidity in %") }}>Humidity in %</a>
+                    <a href="#" onClick={(e) => { setyScope("Pressure"); setTitleCaption("Pressure in mBars") }}>Pressure in mBars</a>
+                    <a href="#" onClick={(e) => { setyScope("Light"); setTitleCaption("Light in %") }}>Light in %</a>
+                    <a href="#" onClick={(e) => { setyScope("Temperature_out"); setTitleCaption("Temperature out in ℃") }}>Temperature out in ℃</a>
                 </div>
             </div>
 
