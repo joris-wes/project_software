@@ -46,7 +46,7 @@ const chart = ({ url }) => {
          */
       }
       <h2>{sensornames}</h2>
-      <a href={`https://9970-83-82-70-70.eu.ngrok.io/api/${sensornames}/data/raw`} style={{color: "darkblue"}}>Raw data</a>
+      <a href={`http://raspberryjoris.tplinkdns.com/api/${sensornames}/data/raw`} target="_blank" style={{color: "darkblue"}}>Raw data</a>
       {data.length !== 0 ? <ResponsiveContainer width={600} height={"95%"}>
         <AreaChart
           data={data}
